@@ -1,50 +1,483 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+	<section>
+          <h1>(Fun)ctional</h1>
+          <div class="fragment appear">
+            <h2>or</h2>
+            <h2>Putting the "fun" back in "functional"</h2>
+          </div>
+          <div class="fragment appear">
+            <h2>or...</h2>
+          </div>
+        </section>
+        <section data-background-image="images/Slim-Pickens-riding-the-Bomb.jpg">
+          <h1 class="fragment appear" style="color: orange">How I learned to stop worrying and love functional programming</h1>
+        </section>
+        <section>
+          <h1>Before functional programming...</h1>
+        </section>
+        <section><img class="stretch" src="images/bU6GKBpWaJ4tO.gif"></section>
+        <section><img class="stretch" src="images/cpp-logo.png"></section>
+        <section><img class="stretch" src="images/l12866-java-eps-logo-99090.png"></section>
+        <section><img class="stretch" src="images/design-patterns-book-cover.jpg"></section>
+        <section><img class="stretch" src="images/designPatternsMap.jpg"></section>
+        <section><img class="stretch" src="images/head-first-design-patterns-cover.jpg"></section>
+        <section><img class="stretch" src="images/Python-logo-notext.svg.png"></section>
+        <section>
+          <h1>And I discovered that:</h1>
+          <ul style="list-style-type: none; font-size: 2em">
+            <li class="fragment appear">Modules</li>
+            <li class="fragment appear">+ Functions</li>
+            <li class="fragment appear">+ Plain objects</li>
+            <li class="fragment appear">solved most of my problems</li>
+          </ul>
+        </section>
+        <section>
+          <h1>After functional programming...</h1>
+        </section>
+        <section><img class="stretch" src="images/9316189783_d27fa984b2_o.jpg"></section>
+        <section>
+          <h1>And I am not alone...</h1>
+          <ul style="font-size: 1.5em">
+            <li class="fragment appear">Elm</li>
+            <li class="fragment appear">Clojurescript</li>
+            <li class="fragment appear">React's functional components</li>
+            <li class="fragment appear">Redux</li>
+            <li class="fragment appear">lodash/fp</li>
+            <li class="fragment appear">Rambda</li>
+            <li class="fragment appear">RxJS</li>
+          </ul>
+        </section>
+        <section>
+          <h1>What is this thing we call "functional programming"?</h1>
+        </section>
+        <section>
+          <h1>"Functional programming" is...</h1>
+          <ul style="list-style-type: none; font-size: 2em">
+            <li class="fragment appear">...a programming paradigm</li>
+            <li class="fragment appear">...a coding style</li>
+            <li class="fragment appear">...a mindset</li>
+            <li class="fragment appear">...a sexy "buzzwordy" trend</li>
+          </ul>
+          <p class="fragment appear" todo>(thank you to @AnjanaVakil for the inspiration)</p>
+          <aside class="notes" data-markdown>
+            After "...a programming paradigm"
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+            Or If you don't want to be too academic about you can say...
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+            Myth debunking: Lisp, the second oldest high-level language (only 1 year older than Fortran), created in the late 1950s has higher-order functions.
+          </aside>
+        </section>
+        <section>
+          <h1>But wait... I develop in JavaScript, not Haskell!</h1>
+        </section>
+        <section>
+          <h1>Well, you're in luck!</h1>
+        </section>
+        <section>
+          <h1>JavaScript is a multi-paradigm language.</h1>
+        </section>
+        <section>
+          <h1>And one of the those paradigms is the functional.</h1>
+        </section>
+        <section>
+          <h1>Functions are first-class citizens in JavaScript.</h1>
+          <aside class="notes" data-markdown>
+            Brendan Eich in his infinite wisdom made functions first-class citizens in JavaScript.
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+            Although most modern languages support higher-order functions, we have to admire Brendan's foresight, because even today Java only has partial support for these, and C# and C++ only acquired it fairly recent versions.
+          </aside>
+        </section>
+        <section>
+          <h1>What does this mean?</h1>
+        </section>
+        <section>
+          <h1>Assign a function to a variable</h1>
+<pre><code data-trim data-noescape>
+const adder = function(a, b) {
+  return a + b;
+}
+</code></pre>
+<pre class="fragment appear"><code data-trim data-noescape>
+const adder = (a, b) => a + b;
+</code></pre>
+        </section>
+        <section>
+          <h2>Higher-order functions [1]</h2>
+<pre><code data-trim data-noescape>
+function execOp(op, a, b) {
+  return op(a, b);
+}
+
+function sum(a, b) {
+  return a + b;
+}
+
+var subtract = (a, b) => a - b;
+
+console.log(execOp(sum, 4, 3));
+console.log(execOp(subtract, 4, 3));
+</code></pre>
+
+<pre class="fragment appear"><code data-trim data-noescape>
+$ node higher-order-2.js
+<span class="fragment appear">7</span>
+<span class="fragment appear">1</span>
+</code></pre>
+        </section>
+        <section>
+          <h2>Higher-order functions [2]</h2>
+<pre class="fragment current-visible" style="font-size: 0.4em"><code data-trim data-noescape>
+function nAdderFactory(n) {
+  return function(a) {
+    return n + a;
+  }
+}
+</code></pre>
+
+<pre class="fragment appear" style="font-size: 0.4em"><code data-trim data-noescape>
+function nAdderFactory(n) {
+  return a => n + a;
+}
+
+var add2 = nAdderFactory(2);
+
+console.log(add2(3));
+console.log(add2(40));
+
+var add5 = nAdderFactory(5);
+
+console.log(add5(3));
+console.log(add5(40));
+</code></pre>
+
+<pre class="fragment appear"><code data-trim data-noescape>
+$ node higher-order-1.js
+<span class="fragment appear">5</span>
+<span class="fragment appear">42</span>
+<span class="fragment appear">8</span>
+<span class="fragment appear">45</span>
+</code></pre>
+        </section>
+        <section>
+          <h1>Challenge: spot the closure</h1>
+<pre><code data-trim data-noescape>
+function nAdderFactory(n) {
+  return function(a) {
+    return n + a;
+  }
+}
+</code></pre>
+        </section>
+        <section>
+          <h1>Food for thought: metaprogramming</h1>
+          <aside class="notes" data-markdown>
+            Can you envision how these function factories can be useful in places where we have a lot of very similar code repetition? Especially tests?
+          </aside>
+        </section>
+        <section>
+          <h1>Partial application [1]</h1>
+<pre><code data-trim data-noescape>
+function subtracter(a, b) {
+  return a - b;
+}
+
+const boundSubtractFrom5 = subtracter.bind(null, 5);
+
+const wrappedSubtractFrom5 = b => subtracter(5, b);
+
+console.log(boundSubtractFrom5(3));
+console.log(wrappedSubtractFrom5(3));
+</code></pre>
+<pre class="fragment appear"><code data-trim data-noescape>
+$ node partial-application-1.js
+<span class="fragment appear">2</span>
+<span class="fragment appear">2</span>
+</code></pre>
+          <aside class="notes" data-markdown>
+            And because obviously my code is self-documenting you can already guess what the results will be.
+          </aside>
+        </section>
+        <section>
+          <h1>Partial application [2]</h1>
+<pre><code data-trim data-noescape>
+function subtracter(a, b) {
+  return a - b;
+}
+
+function wrappedSubtract5(a) {
+  return subtracter(a, 5);
+};
+
+console.log(subtract5(8));
+</code></pre>
+<pre><code data-trim data-noescape>
+$ node wrapped.js
+3
+</code></pre>
+         <p class="fragment appear">( hint: <code>_.partial</code> )</p>
+        </section>
+        <section>
+          <h1>Currying</h1>
+<pre style="font-size: 0.4em"><code data-trim data-noescape>
+function autoCurry(fn) {
+  const len = fn.length;
+  let args = [];
+  return function next() {
+    args = args.concat([].slice.call(arguments));
+    if (args.length >= len) return fn.apply(this, args.splice(0));
+    return next;
+  }
+}
+
+const curryedAdder = autoCurry(function(a, b, c, d) {
+  return a + b + c + d;
+});
+
+console.log( curryedAdder(1, 2, 3, 4) );
+console.log( curryedAdder(1) (2) (3) (4) );
+console.log( curryedAdder(1) (2, 3) (4) );
+</code></pre>
+<pre class="fragment appear"><code data-trim data-noescape>
+$ node currying.js
+<span class="fragment appear">10</span>
+<span class="fragment appear">10</span>
+<span class="fragment appear">10</span>
+</code></pre>
+
+         <p class="fragment appear">( hint: lodash/fp / rambda )</p>
+        </section>
+        <section>
+          <h1>Decorators</h1>
+<pre style="font-size: 0.32em"><code data-trim data-noescape>
+const cache = new Map();
+
+function adder(a, b) {
+  return a + b;
+}
+
+function memoise(fn) {
+  return function() {
+    const args = [].slice.call(arguments);
+    const key = String(args);
+    if (cache.has(key)) {
+      const cachedResult = cache.get(key);
+      console.log('cached result:', cachedResult);
+      return cachedResult;
+    }
+    const freshResult = fn.apply(null, args);
+    console.log('fresh result:', freshResult);
+    cache.set(key, freshResult);
+  }
+}
+
+const memoisedAdder = memoise(adder);
+
+memoisedAdder(1, 2);
+memoisedAdder(3, 4);
+memoisedAdder(1, 2);
+</code></pre>
+<pre class="fragment appear"><code data-trim data-noescape>
+$ node memoisation.js
+fresh result: 3
+fresh result: 7
+cached result: 3
+</code></pre>
+        </section>
+        <section>
+          <h1>In summary:</h1>
+          <ul style="font-size: 1.5em">
+            <li class="fragment appear">First-class functions</li>
+            <li class="fragment appear">Higher-order functions</li>
+            <li class="fragment appear">Closures</li>
+            <li class="fragment appear">Metaprogramming</li>
+            <li class="fragment appear">Partial application</li>
+            <li class="fragment appear">Currying</li>
+            <li class="fragment appear">Decorators</li>
+          </ul>
+        </section>
+        <section data-background-image="images/unicorn-06.jpg">
+          <h1 class="fragment appear" style="color: blue">Pure functions</h1>
+        </section>
+        <section>
+          <h1>Pure functions: dos</h1>
+          <ul style="font-size: 2em">
+            <li class="fragment appear">Immutability</li>
+            <li class="fragment appear">Single responsibility</li>
+            <li class="fragment appear">Composability</li>
+          </ul>
+        </section>
+        <section>
+          <h1>Pure functions: don'ts</h1>
+          <ul style="font-size: 2em">
+            <li class="fragment appear">Mutate arguments</li>
+            <li class="fragment appear">Side effects</li>
+          </ul>
+        </section>
+        <section>
+          <h1>Pure functions: why?</h1>
+          <h2 class="fragment appear">Managing state is hard!</h2>
+        </section>
+        <section>
+          <h2>Pure functions: advantages</h2>
+          <ul style="font-size: 1.5m">
+            <li class="fragment appear">Can be parallelised (thread-safe)</li>
+            <li class="fragment appear">Can be memoised</li>
+            <li class="fragment appear">Easier to test</li>
+            <li class="fragment appear">Once tested can be stubbed</li>
+          </ul>
+        </section>
+        <section>
+          <h1>Bad</h1>
+<pre><code data-trim data-noescape>
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let multiples = [];
+
+function oddMultiplesOf(n) {
+  for (let i = 0; i < numbers.length; i++) {
+    multiples.push(numbers[i] * n);
+    if (multiples[multiples.length - 1] % 2 === 0) {
+      multiples.pop();
+    }
+  }
+}
+
+oddMultiplesOf(3);
+console.log(multiples);
+</code></pre>
+<pre><code data-trim data-noescape>
+$ node bad-multiples.js
+[ 3, 9, 15, 21, 27 ]
+</code></pre>
+</section>
+<section>
+  <h1>Good</h1>
+  <pre><code data-trim data-noescape>
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function nMultiplier(n) {
+  return x => x * n;
+}
+
+function isOdd(x) {
+  return (x % 2 !== 0);
+}
+
+function oddMultiplesOf(numbers, multiplier) {
+  return numbers.map(multiplier).filter(isOdd);
+}
+
+const multiples = oddMultiplesOf(numbers, nMultiplier(3));
+
+console.log(multiples);
+  </code></pre>
+  <pre><code data-trim data-noescape>
+$ node good-multiples.js
+[ 3, 9, 15, 21, 27 ]
+  </code></pre>
+        </section>
+        <section>
+          <h1>In summary:</h1>
+          <ul style="font-size: 1.5em">
+            <li class="fragment appear">Immutable arguments</li>
+            <li class="fragment appear">No side-effects</li>
+            <li class="fragment appear">Single responsibility</li>
+            <li class="fragment appear">Composability</li>
+            <li class="fragment appear">Parallelisation</li>
+            <li class="fragment appear">Memoisation</li>
+            <li class="fragment appear">Easier to test</li>
+          </ul>
+        </section>
+        <section data-background-image="images/immutable.jpg">
+          <h1 class="fragment appear">Immutability</h1>
+        </section>
+        <section>
+          <h1>Traditional approach to immutability:</h1>
+          <h2 class="fragment appear">Manually clone function arguments and mutate into results</h2>
+        </section>
+        <section>
+          <h1>The better way...
+            <img class="stretch fragment appear" src="images/immutable.js.png">
+        </section>
+        <section>
+          <h2>Immutable.js data structures include:</h1>
+          <ul style="font-size: 1.5em">
+            <li class="fragment appear">List</li>
+            <li class="fragment appear">Stack</li>
+            <li class="fragment appear">Map</li>
+            <li class="fragment appear">OrderedMap</li>
+            <li class="fragment appear">Set</li>
+            <li class="fragment appear">OrderedSet</li>
+            <li class="fragment appear">Record</li>
+          </ul>
+        </section>
+        <section>
+          <h2>These data structures are highly efficient on modern JavaScript VMs by using structural sharing.</h2>
+          <img class="stretch" src="images/438px-Purely_functional_tree_after.svg.png">
+        </section>
+        <section>
+          <h2>Immutable.js also provides a lazy Seq, allowing efficient chaining of collection methods like map and filter without creating intermediate representations.</h1>
+        </section>
+        <section>
+          <h1>Recursion</h1>
+          <img class="stretch" src="images/towers-of-hanoi.gif">
+        </section>
+        <section>
+          <h1>In summary:</h1>
+          <ul style="font-size: 1.5em">
+            <li class="fragment appear">What is functional programming</li>
+            <li class="fragment appear">Pure functions</li>
+            <li class="fragment appear">Immutability</li>
+          </ul>
+        </section>
+        <section>
+          <h1>Thank you!</h1>
+          <h2>Q & A</h2>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      history: true,
+
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      { src: 'plugin/notes/notes.js', async: true },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+      ]
+      });
+    </script>
+  </body>
 </html>
